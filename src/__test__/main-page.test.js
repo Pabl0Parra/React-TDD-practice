@@ -8,7 +8,7 @@ import { MainPage } from "../components/main-page";
 // 2. GREEN (passed) --> write minimun code in order to pass the test
 // 3. Refactor --> apply clean code & other good practices (like code smells..)
 
-// This will fail since the component is not being created yet (MainPage)
+//1st commit - This will fail since the component is not being created yet (MainPage)
 describe("Main Page mount", () => {
   it("must display the main page title", () => {
     render(<MainPage />);

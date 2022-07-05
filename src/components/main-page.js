@@ -1,3 +1,7 @@
 import React from "react";
 
-export const MainPage = () => <div />;
+//2nd commit - This will help past first part of test but still fails since it doesn´t show the simpsons quotes
+// export const MainPage = () => <div />;
+
+// Here I implement minimun code for the test to pass (GREEN)
+export const MainPage = () => <h1>Simpsons quotes</h1>;
