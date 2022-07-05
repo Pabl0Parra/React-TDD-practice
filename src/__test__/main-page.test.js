@@ -26,3 +26,14 @@ describe("Main Page mount", () => {
     ).toBeInTheDocument();
   });
 });
+
+// --- Test para verificar listado (RED) ---
+// Es un nuevo bloque de describe donde valido que al hacer render, exista un listado. Para ello uso la query de findAllByRole que retorna una promesa. Esta promesa es resuelta con el await.
+// Al ser resuelta la promesa, retorna un array donde cada índice contiene un nodo por cada coincidencia del role “listitem”.
+describe("Quotes List", () => {
+  it("must display 3 quotes", async () => {
+    render(<MainPage />);
+
+    expect(await screen.findAllByRole("listitem")).toHaveLength(3);
+  });
+});
