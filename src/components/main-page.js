@@ -4,4 +4,11 @@ import React from "react";
 // export const MainPage = () => <div />;
 
 // Here I implement minimun code for the test to pass (GREEN)
-export const MainPage = () => <h1>Simpsons quotes</h1>;
+// export const MainPage = () => <h1>Simpsons quotes</h1>;
+
+// Change the <h1> tag to show that my test passes
+export const MainPage = () => (
+  <div aria-level="1" role="heading">
+    Simpsons quotes
+  </div>
+);
