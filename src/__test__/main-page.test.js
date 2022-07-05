@@ -3,6 +3,9 @@ import { screen, render } from "@testing-library/react";
 
 import { MainPage } from "../components/main-page";
 
+// beforeEach in global scope in my test so it renders each before the actual test (this fixes a code smell --> duplicating renders)
+beforeEach(() => render(<MainPage />));
+
 // --- Test Driven Dev -----
 // 1. RED (failed) --> create a test that fails
 // 2. GREEN (passed) --> write minimun code in order to pass the test
@@ -19,7 +22,7 @@ import { MainPage } from "../components/main-page";
 // 3rd commit -> Refactor
 describe("Main Page mount", () => {
   it("must display the main page title", () => {
-    render(<MainPage />);
+    // render(<MainPage />); --> no need to have two renders
     // change the query to a role one, so even if I change the <h1> tag to any other tag, the test will pass
     expect(
       screen.getByRole("heading", { name: /simpsons quotes/i })
@@ -32,7 +35,7 @@ describe("Main Page mount", () => {
 // Al ser resuelta la promesa, retorna un array donde cada índice contiene un nodo por cada coincidencia del role “listitem”.
 describe("Quotes List", () => {
   it("must display 3 quotes", async () => {
-    render(<MainPage />);
+    // render(<MainPage />); --> no need to have two renders
 
     expect(await screen.findAllByRole("listitem")).toHaveLength(3);
   });
